@@ -21,201 +21,36 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Puppet-BR</h1>
-      <h2 class="project-tagline">Comunidade brasileira de usuários do <a href="https://puppet.com">Puppet</a></h2>
+      <h2 class="project-tagline">Comunidade brasileira de usuários do Puppet</h2>
       
-        <a href="http://puppet-br.org" class="btn">Home</a>
+        <a href="{{ site.url }}" class="btn">Home</a>
         <a href="https://puppet-br.github.io/apostila-puppet/" class="btn">Apostila</a>
         <a href="https://groups.google.com/forum/#!forum/puppet-users-br" class="btn">Lista de discussão</a>
     </section>
 
     <section class="main-content">
 
-<p style="text-align:center;"><a href="http://puppet-br.org"><img src="images/puppet-users-br.png" alt=""></a></p>
+<p style="text-align:center;"><a href="http://puppet-br.org"><img src="images/puppet-users-br.png" alt="" height="200" width="260"></a></p>
+
+O Puppet é uma ferramenta Open Source para gerenciamento de configuração. Ele é utilizado por diversas empresas que precisam gerenciar milhares de máquinas físicas e virtuais ao redor do mundo. Saiba mais em <a href="https://puppet.com">Puppet</a>.
+
+Se você está precisando de ajuda ou se você pode ajudar quem precisa, participe da nossa comunidade no Google Groups!
+
+    <a href="https://groups.google.com/forum/#!forum/puppet-users-br">https://groups.google.com/forum/#!forum/puppet-users-br</a>
+
+ 
 
 
 
-<p>Em Junho de 2016, os responsáveis pela Instruct cederam os direitos autorais da apostila para a comunidade Puppet-BR gerenciar o conteúdo.</p>
+   <footer class="site-footer">
 
-<p>Para contribuir basta fazer um fork e submeter seu pull request para nós.</p>
-
-<p>Seguem alguns links que explicam como fazer um fork e o pull request.</p>
-
-<ul>
-  <li><a href="https://help.github.com/articles/fork-a-repo/">https://help.github.com/articles/fork-a-repo/</a></li>
-  <li><a href="https://guides.github.com/activities/forking/">https://guides.github.com/activities/forking/</a></li>
-  <li><a href="https://help.github.com/articles/using-pull-requests/">https://help.github.com/articles/using-pull-requests/</a></li>
-  <li><a href="https://gist.github.com/piscisaureus/3342247">https://gist.github.com/piscisaureus/3342247</a></li>
-</ul>
-
-<h4 id="contedo">Conteúdo</h4>
-
-<ol>
-  <li><a href="#editando-arquivos-rst">Editando arquivos RST</a></li>
-  <li><a href="#instruções-para-compilar-a-apostila-gerar-o-pdf">Instruções para compilar a apostila (gerar o PDF)</a>
-    <ul>
-      <li><a href="#no-ubuntu-desktop-14041604">No Ubuntu Desktop 14.04/16.04</a></li>
-      <li><a href="#usando-uma-vm-box-no-vagrant">Usando uma VM box no Vagrant</a></li>
-    </ul>
-  </li>
-</ol>
-
-<h1 id="editando-arquivos-rst">Editando arquivos RST</h1>
-
-<p>O conteúdo da apostila está distribuído em vários arquivos RST.
-Para saber o que é um arquivo no formato RST acesse esta página: <a href="http://www.reviversoft.com/pt/file-extensions/rst">http://www.reviversoft.com/pt/file-extensions/rst</a></p>
-
-<p>Para editar os arquivos, use o editor de texto de sua preferência (Exemplo.: vim, gedit, nano, etc…).</p>
-
-<h1 id="instrues-para-compilar-a-apostila-gerar-o-pdf">Instruções para compilar a apostila (gerar o PDF)</h1>
-
-<h2 id="no-ubuntu-desktop-14041604">No Ubuntu Desktop 14.04/16.04</h2>
-
-<ul>
-  <li>
-    <p>O <code class="highlighter-rouge">LibreOffice</code> é um requisito para a compilação e edição de alguns arquivos da apostila. 
-Ele já vem instalado por padrão no Ubuntu 14.04/16.04.</p>
-  </li>
-  <li>
-    <p>Instale o pacote <code class="highlighter-rouge">rst2pdf</code> com o comando abaixo.</p>
-  </li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install rst2pdf
-</code></pre>
-</div>
-
-<ul>
-  <li>Clone o repositório da apostila com o comando abaixo:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/puppet-br/apostila-puppet.git
-</code></pre>
-</div>
-
-<p>Acesse o diretório no qual você baixou os arquivos fontes da apostila:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cd apostila-puppet/
-</code></pre>
-</div>
-
-<p>Devem existir os arquivos e diretórios abaixo:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    apostila
-    environments
-    README.md
-    Vagrantfile
-</code></pre>
-</div>
-
-<p>Copie o arquivo <code class="highlighter-rouge">apostila-puppet/environments/production/modules/rst2pdf/files/pt_br.py</code> para <code class="highlighter-rouge">/usr/lib/python2.*/dist-packages/docutils/parsers/rst/languages/pt_br.py</code>.</p>
-
-<p>O ambiente de compilação da apostila está pronto.</p>
-
-<ul>
-  <li>
-    <p>Acesse os arquivos do diretório <code class="highlighter-rouge">apostila-puppet/apostila</code> e comece a editá-los.</p>
-  </li>
-  <li>
-    <p>Para gerar a apostila no formato PDF, execute a sequência de comandos abaixo.</p>
-  </li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cd apostila-puppet/apostila
-chmod +x compila.sh
-./compila.sh
-</code></pre>
-</div>
-
-<p>A apostila será gerada e armazenada em <code class="highlighter-rouge">apostila-puppet/apostla/apostila-puppet.pdf</code>.</p>
-
-<h2 id="usando-uma-vm-box-no-vagrant">Usando uma VM box no Vagrant</h2>
-
-<ul>
-  <li>
-    <p>Instale o VirtualBox disponibilizado em: <a href="https://www.virtualbox.org">https://www.virtualbox.org</a></p>
-  </li>
-  <li>
-    <p>Instale o Vagrant dispobilizado em: <a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></p>
-  </li>
-  <li>
-    <p>Instale a box <code class="highlighter-rouge">puppetlabs/ubuntu-16.04-64-puppet</code> com o comando abaixo.</p>
-  </li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>vagrant box add puppetlabs/ubuntu-16.04-64-puppet
-</code></pre>
-</div>
-
-<ul>
-  <li>Clone o repositório da apostila com o comando abaixo:</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/puppet-br/apostila-puppet.git
-</code></pre>
-</div>
-
-<p>Acesse o diretório no qual você baixou os arquivos fontes da apostila:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cd apostila-puppet/
-</code></pre>
-</div>
-
-<p>Devem existir os arquivos e diretórios abaixo:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    apostila
-    environments
-    README.md
-    Vagrantfile
-</code></pre>
-</div>
-
-<ul>
-  <li>De dentro do diretório onde está o arquivo <code class="highlighter-rouge">Vagrantfile</code> execute o comando abaixo</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cd apostila-puppet/
-vagrant up
-</code></pre>
-</div>
-
-<p>O ambiente de compilação da apostila estará pronto em alguns minutos.</p>
-
-<p>Copie o arquivo <code class="highlighter-rouge">apostila-puppet/environments/production/modules/rst2pdf/files/pt_br.py</code> para <code class="highlighter-rouge">/usr/lib/python2.*/dist-packages/docutils/parsers/rst/languages/pt_br.py</code>.</p>
-
-<ul>
-  <li>
-    <p>Acesse os arquivos do diretório <code class="highlighter-rouge">apostila-puppet/apostila</code> e comece a editá-los.</p>
-  </li>
-  <li>
-    <p>Para gerar a apostila no formato PDF é necessário estar dentro da VM.</p>
-  </li>
-</ul>
-
-<p>Execute a sequência de comandos abaixo para gerar o PDF:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cd apostila-puppet/
-vagrant ssh
-cd /vagrant/apostila
-chmod +x compila.sh
-./compila.sh
-</code></pre>
-</div>
-
-<p>A apostila será gerada e armazenada em <code class="highlighter-rouge">/vagrant/apostila/apostila-puppet.pdf</code> e 
-também estará acessível em sua máquina dentro do diretório: <code class="highlighter-rouge">apostila-puppet/apostla/apostila-puppet.pdf</code>.</p>
-
-<p>A VM é necessária apenas para gerar o PDF a partir dos arquivos fontes.</p>
-
-
-
-      <footer class="site-footer">
-        
           <span class="site-footer-owner"><a href="https://github.com/puppet-br/apostila-puppet">apostila-puppet</a> é mantida por <a href="https://github.com/puppet-br">puppet-br</a>.</span>
-        
+
         <span class="site-footer-credits">Página gerada por <a href="https://pages.github.com">GitHub Pages</a>.</span>
       </footer>
     </section>
 
-    
+
   </body>
 </html>
+ 

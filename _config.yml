@@ -1,1 +1,13 @@
+url: http://puppet-br.org
+
+name: Puppet-BR - Comunidade brasileira de usuários Puppet
+
+description: Site da comunidade Puppet-BR
+
+logo: /images/puppet-users-br.png 
+
+exclude:
+  - README.md
+  - .gitignore
+
 theme: jekyll-theme-cayman
